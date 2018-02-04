@@ -4,12 +4,15 @@ body {
   font-family: 'Rubik', sans-serif;
   font-weight: 300;
   color: #fff;
-  background: #2e2e36;
+  background: #24242a;
+  user-select: none;
 }
 
 .logo {
   font-family: 'Orbitron', sans-serif;
   text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
 }
 
 .logo::after {

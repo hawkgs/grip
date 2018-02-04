@@ -1,0 +1,29 @@
+.landing {
+  opacity: 0;
+  animation: 2s fade-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.landing .logo {
+  margin-top: 50%;
+  font-size: 60px;
+}
+
+.landing .grip-btn {
+  width: 70%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+
+
+.landing .info-button {
+  position: fixed;
+  left: calc(50% - 15px);
+  bottom: 20px;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

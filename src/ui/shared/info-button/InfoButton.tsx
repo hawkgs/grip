@@ -1,19 +1,18 @@
 import * as React from 'react';
-import './Button.css';
+import './InfoButton.css';
 
 import autobind from 'autobind-decorator';
 
-interface ButtonProps {
-  onClick?: (e: any) => void;
-  children?: any;
+interface InfoButtonProps {
+  onClick: () => void;
 }
 
-interface ButtonState {
+interface InfoButtonState {
   clicked: boolean;
 }
 
-export class Button extends React.Component<ButtonProps, ButtonState> {
-  constructor(props: ButtonProps) {
+export class InfoButton extends React.Component<InfoButtonProps, InfoButtonState> {
+  constructor(props: InfoButtonProps) {
     super(props);
     this.state = {
       clicked: false
@@ -32,14 +31,14 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
   render() {
     return (
-      <button
-        className={'grip-btn' + (this.state.clicked ? ' clicked' : '')}
-        onClick={this.props.onClick}
+      <div
+        className={'info-button' + (this.state.clicked ? ' clicked' : '')}
         onTouchStart={this.onTouchStart}
         onTouchEnd={this.onTouchEnd}
+        onClick={this.props.onClick}
       >
-        {this.props.children}
-      </button>
+        ?
+      </div>
     );
   }
 }
