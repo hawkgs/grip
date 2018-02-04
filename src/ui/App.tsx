@@ -23,10 +23,6 @@ export class App extends React.Component<AppProps, {}> {
     window.onbeforeunload = () => {
       saveData(this.data);
     };
-
-    if (this.data.selectedCar) {
-      this.props.history.push(DriveRoute);
-    }
   }
 
   render() {
