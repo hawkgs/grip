@@ -7,13 +7,4 @@
   font-size: 20px;
   display: block;
   font-weight: 300;
-  transition: transform 0.2s ease;
-}
-
-.grip-btn:focus {
-  outline: none;
-}
-
-.grip-btn.clicked {
-  transform: scale(1.1);
 }

@@ -5,7 +5,6 @@ import autobind from 'autobind-decorator';
 
 interface ButtonProps {
   onClick?: (e: any) => void;
-  children?: any;
 }
 
 interface ButtonState {
@@ -33,7 +32,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
   render() {
     return (
       <button
-        className={'grip-btn' + (this.state.clicked ? ' clicked' : '')}
+        className={'grip-btn clk' + (this.state.clicked ? ' clicked' : '')}
         onClick={this.props.onClick}
         onTouchStart={this.onTouchStart}
         onTouchEnd={this.onTouchEnd}

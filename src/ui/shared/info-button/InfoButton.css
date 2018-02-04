@@ -8,9 +8,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.2s ease;
-}
-
-.info-button.clicked {
-  transform: scale(1.1);
 }

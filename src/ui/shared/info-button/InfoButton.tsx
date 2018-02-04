@@ -32,7 +32,7 @@ export class InfoButton extends React.Component<InfoButtonProps, InfoButtonState
   render() {
     return (
       <div
-        className={'info-button' + (this.state.clicked ? ' clicked' : '')}
+        className={'info-button clk' + (this.state.clicked ? ' clicked' : '')}
         onTouchStart={this.onTouchStart}
         onTouchEnd={this.onTouchEnd}
         onClick={this.props.onClick}
