@@ -2,22 +2,19 @@ import { Sensor } from './Sensor';
 
 const EventName = 'devicemotion';
 
-export class Accelerometer extends Sensor {
-  private _supported;
+export type AccelerationEvent = DeviceAcceleration;
 
+export class Accelerometer extends Sensor {
   constructor() {
     super(EventName);
   }
 
-  get supported() {
-    return this._supported;
-  }
-
-  listen(cb: (a: DeviceAcceleration) => void) {
+  listen(cb: (a: AccelerationEvent | null) => void) {
     super.listen((e: DeviceMotionEvent) => {
       if (e.acceleration) {
-        this._supported = true;
         cb(e.acceleration);
+      } else {
+        cb(null);
       }
     });
   }

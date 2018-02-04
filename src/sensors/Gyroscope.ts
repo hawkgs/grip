@@ -9,17 +9,11 @@ export interface GyroscopeEvent {
 }
 
 export class Gyroscope extends Sensor {
-  private _supported;
-
   constructor() {
     super(EventName);
   }
 
-  get supported() {
-    return this._supported;
-  }
-
-  listen(cb: (g: GyroscopeEvent) => void) {
+  listen(cb: (g: GyroscopeEvent | null) => void) {
     super.listen((e: DeviceOrientationEvent) => {
       const { alpha, beta, gamma } = e;
 
@@ -29,7 +23,8 @@ export class Gyroscope extends Sensor {
           betaX: beta,
           gammaY: gamma
         });
-        this._supported = true;
+      } else {
+        cb(null);
       }
     });
   }

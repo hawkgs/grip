@@ -5,8 +5,6 @@ export abstract class Sensor {
     private _eventName: string
   ) {}
 
-  abstract get supported(): boolean;
-
   listen(cb: any) {
     window.addEventListener(this._eventName, this._ref = cb);
   }
