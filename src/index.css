@@ -1,5 +1,17 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  background: #2e2e36;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+.logo::after {
+  content: 'GRIP';
 }

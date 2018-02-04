@@ -1,0 +1,18 @@
+.grip-btn {
+  border: 1px solid #2d73ff;
+  font-family: 'Rubik', sans-serif;
+  background: none;
+  color: #2d73ff;
+  padding: 10px 30px;
+  font-size: 20px;
+  display: block;
+  font-weight: 300;
+}
+
+.grip-btn:focus {
+  outline: none;
+}
+
+.grip-btn.clicked {
+  transform: scale(1.1);
+}
