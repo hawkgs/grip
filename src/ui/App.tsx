@@ -38,7 +38,10 @@ export class App extends React.Component<AppProps, {}> {
             exact={true}
             render={() => {
               return (
-                <Landing data={this.data} />
+                <Landing
+                  data={this.data}
+                  history={this.props.history}
+                />
               );
             }}
           />

@@ -8,6 +8,7 @@
 .landing .logo {
   margin-top: 50%;
   font-size: 60px;
+  transition: margin-top 1s ease, font-size 1s ease;
 }
 
 .landing .grip-btn {
@@ -15,7 +16,6 @@
   max-width: 300px;
   margin: 20px auto;
 }
-
 
 .landing .info-button {
   position: fixed;
@@ -29,6 +29,17 @@
 
 .landing .by {
   color: rgba(255, 255, 255, 0.4);
+}
+
+.landing.exiting .logo {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.landing.exiting .grip-btn,
+.landing.exiting .info-button {
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }
 
 @keyframes fade-in {

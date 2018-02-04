@@ -6,20 +6,26 @@ import { Button } from '../shared/button/Button';
 import { InfoButton } from '../shared/info-button/InfoButton';
 import { Modal } from '../shared/modal/Modal';
 import { DataStore } from '../../model';
+import { AddCarRoute } from '../../routing/Routes';
+
+const ExitAnimationDuration = 1200;
 
 interface LandingProps {
   data: DataStore;
+  history: any;
 }
 
 interface LandingState {
   aboutVisible: boolean;
+  pageExiting: boolean;
 }
 
 export class Landing extends React.Component<LandingProps, LandingState> {
   constructor(props: LandingProps) {
     super(props);
     this.state = {
-      aboutVisible: false
+      aboutVisible: false,
+      pageExiting: false
     };
   }
 
@@ -33,11 +39,18 @@ export class Landing extends React.Component<LandingProps, LandingState> {
     this.setState({ aboutVisible: true });
   }
 
+  @autobind
+  addCar() {
+    this._onPageLeave(() => {
+      this.props.history.push(AddCarRoute);
+    });
+  }
+
   render() {
     return (
-      <section className="landing">
+      <section className={'landing' + (this.state.pageExiting ? ' exiting' : '')}>
         <div className="logo" />
-        <Button>ADD A CAR</Button>
+        <Button onClick={this.addCar}>ADD A CAR</Button>
         { !!this.props.data.cars.length && (
           <Button>LOAD A CAR</Button>
         )}
@@ -73,5 +86,11 @@ export class Landing extends React.Component<LandingProps, LandingState> {
         </span>
       </Modal>
     );
+  }
+
+  private _onPageLeave(cb: () => any) {
+    this.setState({ pageExiting: true }, () => {
+      setTimeout(cb, ExitAnimationDuration);
+    });
   }
 }
