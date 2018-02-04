@@ -5,6 +5,7 @@ import autobind from 'autobind-decorator';
 
 interface ButtonProps {
   onClick?: (e: any) => void;
+  disabled?: boolean;
 }
 
 interface ButtonState {
@@ -21,18 +22,23 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
   @autobind
   onTouchStart() {
-    this.setState({ clicked: true });
+    if (!this.props.disabled) {
+      this.setState({ clicked: true });
+    }
   }
 
   @autobind
   onTouchEnd() {
-    this.setState({ clicked: false });
+    if (!this.props.disabled) {
+      this.setState({ clicked: false });
+    }
   }
 
   render() {
     return (
       <button
         className={'grip-btn clk' + (this.state.clicked ? ' clicked' : '')}
+        disabled={this.props.disabled}
         onClick={this.props.onClick}
         onTouchStart={this.onTouchStart}
         onTouchEnd={this.onTouchEnd}

@@ -4,6 +4,7 @@ body {
   font-family: 'Rubik', sans-serif;
   font-weight: 300;
   color: #fff;
+  background: #000;
   background: #24242a;
   user-select: none;
 }
@@ -48,4 +49,25 @@ hr {
 
 .clk.clicked {
   transform: scale(1.1);
+}
+
+.page-fade-in-1s,
+.page-fade-in-2s {
+  opacity: 0;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-name: fade-in;
+}
+
+.page-fade-in-1s {
+  animation-duration: 1s;
+}
+
+.page-fade-in-2s {
+  animation-duration: 2s;
+}
+
+@keyframes page-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

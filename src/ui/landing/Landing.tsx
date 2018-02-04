@@ -48,7 +48,7 @@ export class Landing extends React.Component<LandingProps, LandingState> {
 
   render() {
     return (
-      <section className={'landing' + (this.state.pageExiting ? ' exiting' : '')}>
+      <section className={'landing page-fade-in-2s' + (this.state.pageExiting ? ' exiting' : '')}>
         <div className="logo" />
         <Button onClick={this.addCar}>ADD A CAR</Button>
         { !!this.props.data.cars.length && (

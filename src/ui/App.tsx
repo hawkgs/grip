@@ -46,7 +46,9 @@ export class App extends React.Component<AppProps, {}> {
             exact={true}
             render={() => {
               return (
-                <AddCar />
+                <AddCar
+                  history={this.props.history}
+                />
               );
             }}
           />
