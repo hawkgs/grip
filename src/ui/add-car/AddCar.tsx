@@ -6,6 +6,7 @@ import { Step, NewCarWizard } from './shared/new-car-wizard';
 import { RootRoute } from '../../routing/Routes';
 import { InfoButton } from '../shared/info-button/InfoButton';
 import { Modal } from '../shared/modal/Modal';
+import { Input } from '../shared/input/Input';
 
 enum Steps {
   Weight,
@@ -67,6 +68,13 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
         <NewCarWizard onCancel={this.onCancel} onDone={this.onDone} onStep={this.onStep}>
           <Step title={<>Car Weight <InfoButton onClick={this.showInfo} /></>} disableNext={false}>
             What is your car weight?
+            <Input
+              type="number"
+              className="weight-input"
+              onChange={() => {console.log('a'); }}
+              placeholder="e.g. 1500"
+              unit="kg"
+            />
           </Step>
           <Step title={<>Tires <InfoButton onClick={this.showInfo} /></>}>
             How do you judge you tires condition and quality?

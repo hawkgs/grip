@@ -11,3 +11,12 @@
   height: 20px;
   font-size: 15px;
 }
+
+.add-car .weight-input {
+  margin-top: 25px;
+}
+
+.add-car .weight-input input {
+  width: 100px;
+  text-align: center;
+}
