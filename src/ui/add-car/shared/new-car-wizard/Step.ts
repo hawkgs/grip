@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface StepProps {
-  title: string;
+  title: string | any;
   disablePrev?: boolean;
   disableNext?: boolean;
   children?: any;

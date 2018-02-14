@@ -65,21 +65,17 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
       <section className="add-car">
         <div className="logo" />
         <NewCarWizard onCancel={this.onCancel} onDone={this.onDone} onStep={this.onStep}>
-          <Step title="Car Weight" disableNext={false}>
+          <Step title={<>Car Weight <InfoButton onClick={this.showInfo} /></>} disableNext={false}>
             What is your car weight?
-            <InfoButton onClick={this.showInfo} />
           </Step>
-          <Step title="Tires">
+          <Step title={<>Tires <InfoButton onClick={this.showInfo} /></>}>
             How do you judge you tires condition and quality?
-            <InfoButton onClick={this.showInfo} />
           </Step>
-          <Step title="Suspension">
+          <Step title={<>Suspension <InfoButton onClick={this.showInfo} /></>}>
             What is your suspension stiffness?
-            <InfoButton onClick={this.showInfo} />
           </Step>
-          <Step title="Body Type">
+          <Step title={<>Body Type <InfoButton onClick={this.showInfo} /></>}>
             What is your body type?
-            <InfoButton onClick={this.showInfo} />
           </Step>
           <Step title="Name">
             Pick a name for this car setup.
