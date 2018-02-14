@@ -12,6 +12,7 @@ enum Move {
 interface NewCarWizardProps {
   onCancel: () => void;
   onDone: () => void;
+  onStep: (i: number) => void;
   children?: any;
 }
 
@@ -34,7 +35,7 @@ export class NewCarWizard extends React.Component<NewCarWizardProps, NewCarWizar
   @autobind
   next() {
     if (this.state.step < this.props.children.length - 1) {
-      this.setState({ step: this.state.step + Move.Forward });
+      this._changeStep(Move.Forward);
     } else {
       this.props.onDone();
     }
@@ -43,7 +44,7 @@ export class NewCarWizard extends React.Component<NewCarWizardProps, NewCarWizar
   @autobind
   prev() {
     if (this.state.step > 0) {
-      this.setState({ step: this.state.step + Move.Backward });
+      this._changeStep(Move.Backward);
     } else {
       this.props.onCancel();
     }
@@ -86,5 +87,11 @@ export class NewCarWizard extends React.Component<NewCarWizardProps, NewCarWizar
         </div>
       </div>
     );
+  }
+
+  private _changeStep(dir: Move) {
+    this.setState({ step: this.state.step + dir }, () => {
+      this.props.onStep(this.state.step);
+    });
   }
 }

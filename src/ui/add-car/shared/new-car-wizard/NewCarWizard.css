@@ -16,6 +16,13 @@
 
 .new-car-wizard .step {
   flex: 1;
+  text-align: center;
+  padding-top: 25px;
+}
+
+.new-car-wizard h3 {
+  font-weight: 300;
+  font-size: 20px;
 }
 
 .new-car-wizard .grip-btn {
