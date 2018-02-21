@@ -48,5 +48,5 @@
 
 .new-car-wizard .dots > span.done {
   border: none;
-  background: #2d73ff;
+  background: var(--blue-color);
 }

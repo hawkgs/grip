@@ -1,11 +1,17 @@
+:root {
+  /* --bg-color: #000; */
+  --bg-color: #24242a;
+  --blue-color: #2d73ff;
+  --light-blue-color: #3978d0;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Rubik', sans-serif;
   font-weight: 300;
   color: #fff;
-  background: #000;
-  /* background: #24242a; */
+  background: var(--bg-color);
   user-select: none;
 }
 
@@ -18,12 +24,12 @@ p {
 }
 
 a {
-  color: #3978d0;
+  color: var(--light-blue-color);
   text-decoration: none;
 }
 
 a:hover {
-  border-bottom: 2px solid #3978d0;
+  border-bottom: 2px solid var(--light-blue-color);
 }
 
 hr {

@@ -1,8 +1,8 @@
 .grip-btn {
-  border: 1px solid #2d73ff;
+  border: 1px solid var(--blue-color);
   font-family: 'Rubik', sans-serif;
   background: none;
-  color: #2d73ff;
+  color: var(--blue-color);
   padding: 10px 30px;
   font-size: 20px;
   display: block;
