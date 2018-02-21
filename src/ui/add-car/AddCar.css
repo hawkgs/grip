@@ -20,3 +20,9 @@
   width: 100px;
   text-align: center;
 }
+
+.add-car .unit-system {
+  position: fixed;
+  display: inline-block;
+  bottom: 100px;
+}

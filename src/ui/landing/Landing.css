@@ -1,5 +1,5 @@
 .landing .logo {
-  top: 50%;
+  margin-top: 50%;
   font-size: 60px;
   transition: margin-top 1s ease, font-size 1s ease;
 }

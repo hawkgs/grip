@@ -1,0 +1,64 @@
+.grip-switch {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  --white-switch-color: rgba(255, 255, 255, 0.5);
+}
+
+.grip-switch > .switch {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  border: 1px solid var(--white-switch-color);
+}
+
+.grip-switch > .switch::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: 4px;
+  left: 4px;
+  background: var(--white-switch-color);
+  transition: left 0.2s ease;
+}
+
+.grip-switch.on > .switch,
+.grip-switch.labels > .switch {
+  border: 1px solid var(--blue-color);
+}
+
+.grip-switch.labels > .switch::after {
+  background: var(--blue-color);
+}
+
+.grip-switch.on > .switch::after {
+  left: 34px;
+  background: var(--blue-color);
+}
+
+.grip-switch > .l,
+.grip-switch > .r {
+  position: absolute;
+  font-size: 18px;
+  top: 6px;
+  transition: color 0.2s ease;
+  color: var(--white-switch-color);
+}
+
+.grip-switch > .l {
+  left: 0;
+  margin-left: -10px;
+  transform: translateX(-100%);
+}
+
+.grip-switch > .r {
+  right: 0;
+  margin-right: -10px;
+  transform: translateX(100%);
+}
+
+.grip-switch:not(.on) > .l,
+.grip-switch.on > .r {
+  color: var(--blue-color);
+}

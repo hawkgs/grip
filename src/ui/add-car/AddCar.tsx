@@ -7,6 +7,7 @@ import { RootRoute } from '../../routing/Routes';
 import { InfoButton } from '../shared/info-button/InfoButton';
 import { Modal } from '../shared/modal/Modal';
 import { Input } from '../shared/input/Input';
+import { Switch } from '../shared/switch/Switch';
 
 enum Steps {
   Weight,
@@ -75,6 +76,7 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
               placeholder="e.g. 1500"
               unit="kg"
             />
+            <Switch className="unit-system" labels={{ left: 'Metric', right: 'Imperial' }} />
           </Step>
           <Step title={<>Tires <InfoButton onClick={this.showInfo} /></>}>
             How do you judge you tires condition and quality?
