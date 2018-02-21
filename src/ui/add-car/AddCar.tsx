@@ -84,7 +84,7 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
             <Input
               type="number"
               className="weight-input"
-              onChange={() => {console.log('a'); }}
+              onChange={() => { /**/ }}
               placeholder={`e.g. ${this.state.unitSystem === Units.Metric ? '1500' : '3300'}`}
               unit={this.state.unitSystem === Units.Metric ? 'kg' : 'lbs'}
             />
@@ -95,7 +95,7 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
             />
           </Step>
           <Step title={<>Tires <InfoButton onClick={this.showInfo} /></>}>
-            How do you judge you tires condition and quality?
+            How do you judge your tires condition and quality?
             <MultiSelector onSelect={console.log} default={Tires.Average}>
               <Option value={Tires.Excellent}>Excellent</Option>
               <Option value={Tires.Good}>Good</Option>
@@ -122,6 +122,11 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
           </Step>
           <Step title="Name">
             Pick a name for this car setup.
+            <Input
+              type="text"
+              placeholder="e.g. Nissan 370Z"
+              onChange={() => { /**/ }}
+            />
           </Step>
           <Step title="Be safe!">
             Last but not least, be safe!
