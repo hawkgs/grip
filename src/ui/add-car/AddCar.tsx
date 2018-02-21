@@ -8,6 +8,7 @@ import { InfoButton } from '../shared/info-button/InfoButton';
 import { Modal } from '../shared/modal/Modal';
 import { Input } from '../shared/input/Input';
 import { Switch } from '../shared/switch/Switch';
+import { Units } from '../../model/Units';
 
 enum Steps {
   Weight,
@@ -25,6 +26,7 @@ interface AddCarProps {
 interface AddCarState {
   step: number;
   infoModalVisible: boolean;
+  unitSystem: Units;
 }
 
 export class AddCar extends React.Component<AddCarProps, AddCarState> {
@@ -33,7 +35,8 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
 
     this.state = {
       step: 0,
-      infoModalVisible: false
+      infoModalVisible: false,
+      unitSystem: Units.Metric
     };
   }
 
@@ -50,6 +53,13 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
   @autobind
   onStep(step: number) {
     this.setState({ step });
+  }
+
+  @autobind
+  onUnitSystemChange(isImperial: boolean) {
+    this.setState({
+      unitSystem: isImperial ? Units.Imperial : Units.Metric
+    });
   }
 
   @autobind
@@ -73,10 +83,14 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
               type="number"
               className="weight-input"
               onChange={() => {console.log('a'); }}
-              placeholder="e.g. 1500"
-              unit="kg"
+              placeholder={`e.g. ${this.state.unitSystem === Units.Metric ? '1500' : '3300'}`}
+              unit={this.state.unitSystem === Units.Metric ? 'kg' : 'lbs'}
             />
-            <Switch className="unit-system" labels={{ left: 'Metric', right: 'Imperial' }} />
+            <Switch
+              className="unit-system"
+              labels={{ left: 'Metric', right: 'Imperial' }}
+              onChange={this.onUnitSystemChange}
+            />
           </Step>
           <Step title={<>Tires <InfoButton onClick={this.showInfo} /></>}>
             How do you judge you tires condition and quality?

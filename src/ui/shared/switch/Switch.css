@@ -1,6 +1,6 @@
 .grip-switch {
   position: relative;
-  width: 60px;
+  width: 55px;
   height: 30px;
   --white-switch-color: rgba(255, 255, 255, 0.5);
 }
@@ -9,18 +9,20 @@
   position: relative;
   width: inherit;
   height: inherit;
+  border-radius: 15px;
   border: 1px solid var(--white-switch-color);
 }
 
 .grip-switch > .switch::after {
   content: '';
   position: absolute;
-  width: 22px;
-  height: 22px;
-  top: 4px;
-  left: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: 6px;
+  left: 6px;
   background: var(--white-switch-color);
-  transition: left 0.2s ease;
+  transition: left 0.1s ease;
 }
 
 .grip-switch.on > .switch,
@@ -33,7 +35,7 @@
 }
 
 .grip-switch.on > .switch::after {
-  left: 34px;
+  left: 31px;
   background: var(--blue-color);
 }
 

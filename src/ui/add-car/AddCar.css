@@ -23,6 +23,7 @@
 
 .add-car .unit-system {
   position: fixed;
-  display: inline-block;
+  transform: translateX(-50%);
   bottom: 100px;
+  left: 50%;
 }
