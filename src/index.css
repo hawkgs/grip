@@ -3,6 +3,7 @@
   --bg-color: #24242a;
   --blue-color: #2d73ff;
   --light-blue-color: #3978d0;
+  --click-scale: scale(1.1);
 }
 
 body {
@@ -54,7 +55,7 @@ hr {
 }
 
 .clk.clicked {
-  transform: scale(1.1);
+  transform: var(--click-scale);
 }
 
 .page-fade-in-1s,

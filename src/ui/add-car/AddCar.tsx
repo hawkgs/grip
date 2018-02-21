@@ -8,7 +8,9 @@ import { InfoButton } from '../shared/info-button/InfoButton';
 import { Modal } from '../shared/modal/Modal';
 import { Input } from '../shared/input/Input';
 import { Switch } from '../shared/switch/Switch';
-import { Units } from '../../model/Units';
+import { MultiSelector, Option } from '../shared/multi-selector';
+
+import { Tires, Units, Suspension, CarBodyType } from '../../model';
 
 enum Steps {
   Weight,
@@ -94,12 +96,29 @@ export class AddCar extends React.Component<AddCarProps, AddCarState> {
           </Step>
           <Step title={<>Tires <InfoButton onClick={this.showInfo} /></>}>
             How do you judge you tires condition and quality?
+            <MultiSelector onSelect={console.log} default={Tires.Average}>
+              <Option value={Tires.Excellent}>Excellent</Option>
+              <Option value={Tires.Good}>Good</Option>
+              <Option value={Tires.Average}>Average</Option>
+              <Option value={Tires.Fair}>Fair</Option>
+              <Option value={Tires.Poor}>Poor</Option>
+            </MultiSelector>
           </Step>
           <Step title={<>Suspension <InfoButton onClick={this.showInfo} /></>}>
             What is your suspension stiffness?
+            <MultiSelector onSelect={console.log} default={Suspension.Medium}>
+              <Option value={Suspension.Stiff}>Stiff</Option>
+              <Option value={Suspension.Medium}>Medium</Option>
+              <Option value={Suspension.Soft}>Soft</Option>
+            </MultiSelector>
           </Step>
           <Step title={<>Body Type <InfoButton onClick={this.showInfo} /></>}>
             What is your body type?
+            <MultiSelector onSelect={console.log} default={CarBodyType.Regular}>
+              <Option value={CarBodyType.Sports}>Sports</Option>
+              <Option value={CarBodyType.Regular}>Regular</Option>
+              <Option value={CarBodyType.Family}>Family</Option>
+            </MultiSelector>
           </Step>
           <Step title="Name">
             Pick a name for this car setup.

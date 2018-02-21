@@ -6,7 +6,7 @@ import autobind from 'autobind-decorator';
 interface SwitchProps {
   className?: string;
   labels?: { left: string; right: string; };
-  onChange?: (on: boolean) => void;
+  onChange: (on: boolean) => void;
 }
 
 interface SwitchState {
@@ -24,9 +24,7 @@ export class Switch extends React.Component<SwitchProps, SwitchState> {
   @autobind
   toggle() {
     this.setState({ on: !this.state.on }, () => {
-      if (this.props.onChange) {
-        this.props.onChange(this.state.on);
-      }
+      this.props.onChange(this.state.on);
     });
   }
 
